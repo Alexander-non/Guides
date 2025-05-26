@@ -56,6 +56,7 @@ a {
   border: 1px solid #ddd;
   border-radius: 6px;
   overflow: hidden;
+  filter: drop-shadow(0px 0px .75px black);
 }
 .file-row {
   padding: 1rem;
