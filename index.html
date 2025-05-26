@@ -1,0 +1,293 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Személyes blogom</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: transform 0.25s;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-posts {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-posts h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            img {
+                transform: scale(1.15);
+            }
+        }
+
+        .img-holder {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+        .post-content p {
+            font-size: 13px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active a {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .post-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .featured-posts {
+                padding: 2rem 1rem;
+            }
+        }
+
+    </style>
+    <header>
+        <nav>
+            <div class="logo">Blogom</div>
+            <div class="nav-links">
+                <a href="../index.html">Kezdőlap</a>
+                <a href="/webpage/windows.html">Windows</a>
+                <a href="/webpage/linux.html">Linux</a>
+                <a href="/webpage/networking.html">Hálózat</a>
+                <a href="/webpage/git.html">Git</a>
+                <a href="/webpage/cloud.html">Felhő</a>
+                <a href="/webpage/other.html">Egyéb</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Üdvözöllek a Sulis Blogomon</h1>
+            <p>Itt tárolom a sulis éveim alatt végzett munkákhoz tartozó, és fontosabb jegyzeteket!</p>
+        </section>
+
+        <section class="featured-posts">
+            <h2>Jegyzeteim</h2>
+            <div class="post-grid">
+                <article class="post-card">
+                    <div class="img-holder"><img src="https://img.hvg.hu/Img/981ba3b7-9144-4244-a8b1-39094b1840d5/d499bee9-cfc6-4765-bb7f-7ea5485aa4f8.jpg" alt="Windows"></div>
+                    <div class="post-content">
+                        <h3>Windows jegyzetek</h3>
+                        <p>Jegyzetek a Windows Desktop és Windows Core rendszer használatához.</p>
+                        <a href="/webpage/windows.html" class="read-more">Jegyzetek megtekintése</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="img-holder"><img src="https://softwarelab.org/wp-content/uploads/Linux.jpg" alt="Linux"></div>
+                    <div class="post-content">
+                        <h3>Linux jegyzetek</h3>
+                        <p>Hasznos parancsok Linuxhoz.</p>
+                        <a href="/webpage/linux.html" class="read-more">Jegyzetek megtekintése</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="img-holder"><img src="https://image.winudf.com/v2/image1/Y29tLm5ldGFjYWQuUGFja2V0VHJhY2VyTV9iYW5uZXJfMTU2Njk5NzI5MV8wMzA/banner.jpg?fakeurl=1" alt="Networking"></div>
+                    <div class="post-content">
+                        <h3>Hálózat jegyzetek</h3>
+                        <p>Parancsok Cisco eszközökhöz.</p>
+                        <a href="/webpage/networking.html" class="read-more">Jegyzetek megtekintése</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="img-holder"><img src="/webpage/webpage_sources/git.png" alt="Git"></div>
+                    <div class="post-content">
+                        <h3>Git jegyzetek</h3>
+                        <p>Git parancsok összesítve.</p>
+                        <a href="/webpage/git.html" class="read-more">Jegyzetek megtekintése</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="img-holder"><img src="/webpage/webpage_sources/cloud.png" alt="Cloud"></div>
+                    <div class="post-content">
+                        <h3>Felhős jegyzetek</h3>
+                        <p>Jegyzetek Azure felhő szolgáltatásaihoz.</p>
+                        <a href="/webpage/cloud.html" class="read-more">Jegyzetek megtekintése</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="img-holder"><img src="/webpage/webpage_sources/other.jpg" alt="Other"></div>
+                    <div class="post-content">
+                        <h3>Egyéb jegyzetek</h3>
+                        <p>Kategorizálatlan jegyzetek.</p>
+                        <a href="/webpage/other.html" class="read-more">Jegyzetek megtekintése</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

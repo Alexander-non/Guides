@@ -1,0 +1,114 @@
+ASA 5505:
+
+## IP-t beállítod a promtban (Pl: 10.10.0.<SZÁM>/24) ##
+
+enable
+conf t <<------- N (no)
+
+------------------------
+------------------------
+
+object network inside-net
+subnet 0.0.0.0 0.0.0.0
+nat (inside,outside) dynamic interface
+class-map inspection_default
+match default-inspection-traffic
+exit
+policy-map global_policy
+class inspection_default
+inspect icmp
+exit
+service-policy global_policy global
+
+------------------------
+------------------------
+
+
+int vlan 2
+ip add 192.168.18.18 255.255.255.0
+security-level 0
+nameif outside
+no sh
+
+int e0/2
+switchport access vlan 2
+no sh
+
+## Ellenőrzés: sh int ip brief
+
+--------- 
+
+int vlan 1
+ip add 10.10.0.8 255.255.255.0
+security-level 100
+nameif inside
+no sh
+
+int e0/4
+switchport access vlan 1
+no sh
+
+## Ellenőrzés: sh int ip brief
+
+----------
+
+route outside 0.0.0.0 0.0.0.0 192.168.18.1
+
+## Ellenőrzés: ping 1.1.1.1
+
+enable password BMSzCVizsga
+
+---------------
+
+dhcpd address 10.10.0.120-10.10.0.140 inside
+dhcpd enable inside
+
+
+---------------
+---------------
+
+cmd: ipconfig /all
+>> ethernet <<
+
+büngésző --> IP: // admin/admin
+
+---------------
+---------------
+
+
+enable
+conf t
+
+hostname Radi
+
+enable password BMSzCVizsga <---- nem kérte a feladat, de biztos, ami biztos
+
+line con 0
+password BMSzCVizsga
+
+vlan 77
+name nem-hasznalt
+
+int ra f0/1 - 14, fa0/16 - 24, g0/1 - 2
+sh
+sw m a
+sw a v 77
+
+-----------
+
+int vl1
+ip addr 192.168.8.120 255.255.255.0
+no sh
+
+ip default-gateway 192.168.8.1
+
+username admin password Pataky
+
+ip domain-name pataky.lan
+
+crypto key gen rsa mod 1024
+ip ssh v 2
+
+lin vty 0 4
+transport input ssh
+login local

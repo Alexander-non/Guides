@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: transform 0.25s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* MAIN */
+a {
+  text-decoration: none;
+  color: black;
+}
+.file-browser {
+  max-width: 800px;
+  margin: 6rem auto 2rem auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.file-row {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.file-row:hover {
+  background: #f1f1f1;
+}
+.file-name {
+  font-size: 1rem;
+  word-wrap: break-word;
+}
